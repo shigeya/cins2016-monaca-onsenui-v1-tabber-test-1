@@ -1,11 +1,13 @@
-<ons-page ng-controller="MyLazyCtrl">
-  <ons-toolbar>
-    <div class="center">Lazy Repeat</div>
-  </ons-toolbar>
-
-  <ons-list>
-    <ons-list-item ons-lazy-repeat="MyDelegate">
-      {{item.name}}
-    </ons-list-item>
-  </ons-list>
-</ons-page>
+<ons-navigator var="myNavigator2">
+    <ons-page ng-controller="MyLazyCtrl">
+      <ons-toolbar>
+        <div class="center">Lazy Repeat</div>
+      </ons-toolbar>
+    
+      <ons-list>
+        <ons-list-item ons-lazy-repeat="MyDelegate" modifier="chevron" ng-click="myNavigator2.pushPage('new_page2.html')">
+          {{item.name}}
+         </ons-list-item>
+      </ons-list>
+    </ons-page>
+</ons-navigator>
