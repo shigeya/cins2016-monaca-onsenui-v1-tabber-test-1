@@ -1,3 +1,11 @@
-<ons-toolbar>
-    <div class="center">List</div>
-</ons-toolbar>
+<ons-page ng-controller="MyLazyCtrl">
+  <ons-toolbar>
+    <div class="center">Lazy Repeat</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item ons-lazy-repeat="MyDelegate">
+      {{item.name}}
+    </ons-list-item>
+  </ons-list>
+</ons-page>

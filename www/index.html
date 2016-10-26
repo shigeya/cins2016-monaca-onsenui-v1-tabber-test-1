@@ -7,8 +7,27 @@
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
      <script>
-        angular.module('myApp', ['onsen']);
-    </script>
+        angular.module('myApp', ['onsen'])
+        .controller('MyLazyCtrl', ['$scope', function($scope) {
+            $scope.MyDelegate = {
+              configureItemScope: function(index, itemScope) {
+                console.log("Created item #" + index);
+                itemScope.item = {
+                  name: 'Item #' + (index + 1)
+                };
+              },
+              calculateItemHeight: function(index) {
+                return 45;
+              },
+              countItems: function() {
+                return 10000000;
+              },
+              destroyItemScope: function(index, scope) {
+                console.log("Destroyed item #" + index);
+              }
+            };
+          }]);
+  </script>
 </head>
 <body>
     <ons-tabbar var="tabbar">
